@@ -30,6 +30,7 @@ struct AddHabitView: View {
                 let item = HabitDetails(title: self.title, description: self.description)
                     self.habit.items.append(item)
                     self.presentationMode.wrappedValue.dismiss()
+            
 
             })
         }

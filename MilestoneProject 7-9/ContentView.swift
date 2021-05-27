@@ -31,6 +31,7 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: removeItems)
+                
             }
             .navigationBarTitle("Habit Tracker")
 
@@ -38,6 +39,7 @@ struct ContentView: View {
                     self.showingSheet = true
                 }) {
                     Image(systemName: "plus")
+                
                 }
             )
         }
@@ -47,13 +49,14 @@ struct ContentView: View {
             .sheet(isPresented: $showingSheet) {
 //                show an AddView here
                 AddHabitView(habit: self.habit)
-            
-        }
+                
+                }
     }
     
     func removeItems(at offsets: IndexSet){
         habit.items.remove(atOffsets: offsets)
-        self.showingSheet = false
+        showingSheet = false
+        
     }
 }
 
